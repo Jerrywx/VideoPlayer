@@ -25,4 +25,27 @@
     
     [kxmovie](https://github.com/kolyvan/kxmovie)               功能简单，
     
+    [ffmpeg-avplayer-for-ios-tvos](https://github.com/iMoreApps/ffmpeg-avplayer-for-ios-tvos) 功能比较强大 支持iOS 和 TVOC 但不开源
+    
+  4. ffmpeg 编译方法
+	[ffmpeg源码](https://github.com/FFmpeg/FFmpeg)
+	[ffmpeg编译](http://www.cocoachina.com/ios/20150514/11827.html)
+	1. 编译时需要先安装 yasm
+		安装方式：
+		终端命令如下：
+		curl http://www.tortall.net/projects/yasm/releases/yasm-1.2.0.tar.gz >yasm.tar.gz
+		tar xzvf yasm.tar.gz
+		cd yasm-1.2.0
+		./configure	
+		make
+		sudo make install
+	2. 在操作过程中需要将 文件复制到 /usr/bin 目录下
+		此时会出现 “Operation not permitted” 错误
+		这是由于 El Capitan 加入了Rootless机制，不再能够随心所欲的读写很多路径了。
+		于是尝试关闭 Rootless。重启按住 Command+R，进入恢复模式，打开Terminal。
+		csrutil disable
+		重启即可。如果要恢复默认，那么
+		csrutil enable
 
+	ffmpeg 编译完成 
+  
